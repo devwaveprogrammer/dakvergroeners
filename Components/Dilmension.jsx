@@ -1,33 +1,45 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PiPhoneCallThin } from "react-icons/pi";
 import { CiMail } from "react-icons/ci";
+import { DataContext } from "@/Context/DataProvider";
 
 const Dilmension = () => {
-  const [length, setLength] = useState('5');
-  const [width, setWidth] = useState('7');
-  const [surface, setSurface] = useState('');
-  const [circumference, setCircumference] = useState('');
+  const {
+    length,
+    setLength,
+    width,
+    setWidth,
+    surface,
+    setSurface,
+    circumference,
+    setCircumference,
+    toggle,
+    setToggle,
+  } = useContext(DataContext);
+
   const [showCalculation, setShowCalculation] = useState(false);
-  const [buttonText, setButtonText] = useState('I prefer to enter length and width');
-  const [toggle, setToggle] = useState(true);
+  const [buttonText, setButtonText] = useState(
+    "I prefer to enter length and width"
+  );
 
   const toggleCalculation = () => {
     if (toggle) {
       const calculatedSurface = length * width;
-      const calculatedCircumference = 2 * (parseFloat(length) + parseFloat(width));
+      const calculatedCircumference =
+        2 * (parseFloat(length) + parseFloat(width));
 
       setSurface(calculatedSurface.toFixed(2));
       setCircumference(calculatedCircumference.toFixed(2));
       setShowCalculation(true);
 
-      setButtonText('I prefer to enter length and width');
+      setButtonText("I prefer to enter length and width");
     } else {
       setShowCalculation(!showCalculation);
-      setButtonText('I prefer to fill in the area and perimeter');
+      setButtonText("I prefer to fill in the area and perimeter");
     }
     setToggle(!toggle);
   };
@@ -50,11 +62,14 @@ const Dilmension = () => {
           <div className="flex gap-6 mb-10">
             <div>
               <label className="label">
-                <span className="label-text"> {toggle ? 'Length' : 'Surface'}:</span>
+                <span className="label-text">
+                  {" "}
+                  {toggle ? "Length" : "Surface"}:
+                </span>
               </label>
               <input
                 type="number"
-                value={toggle ? length : showCalculation ? surface : ''}
+                value={toggle ? length : showCalculation ? surface : ""}
                 onChange={(e) => setLength(e.target.value)}
                 placeholder="Type here"
                 className="input input-bordered  max-w-xs focus:outline-none w-44 "
@@ -62,11 +77,14 @@ const Dilmension = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text"> {toggle ? 'Width' : 'Circumference'}:</span>
+                <span className="label-text">
+                  {" "}
+                  {toggle ? "Width" : "Circumference"}:
+                </span>
               </label>
               <input
                 type="number"
-                value={toggle ? width : showCalculation ? circumference : ''}
+                value={toggle ? width : showCalculation ? circumference : ""}
                 onChange={(e) => setWidth(e.target.value)}
                 placeholder="Type here"
                 className="input input-bordered max-w-xs  focus:outline-none w-44"
@@ -94,7 +112,8 @@ const Dilmension = () => {
             </button>
           </div>
 
-          <button type="submit"
+          <button
+            type="submit"
             className="btn normal-case w-96 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
             style={{ transition: "background-color 0.3s, box-shadow 0.3s " }}
           >
@@ -141,16 +160,22 @@ const Dilmension = () => {
         <div className="pt-96 pl-10">
           <h3 className="text-xl font-semibold">Your Green Roof</h3>
         </div>
-        <div className="flex px-10 pt-5 justify-between text-sm">
+        {
+          surface && circumference ? 
+           <div className="flex px-10 pt-5 justify-between text-sm">
           <div>
             <p>Surface</p>
             <p>Circumference</p>
           </div>
           <div>
-            <p>1,000 sqm</p>
-            <p>200m</p>
+            <p>{surface} sqm</p>
+            <p>{circumference}m</p>
           </div>
         </div>
+        :
+        <p>Unfortunately, we cannot yet calculate <br/> your green roof. First enter the <br/> dimensions and other options.</p>
+        }
+       
       </div>
     </div>
   );
