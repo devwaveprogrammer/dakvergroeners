@@ -28,7 +28,7 @@ const dilmension = () => {
       <input type="number" placeholder="Type here" className="input input-bordered max-w-xs  focus:outline-none w-44" />
       </div>
       </div>
-      <button className="btn normal-case animate-none bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
+      <button className="btn normal-case animate-pulse bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
       I prefer to fill the area and perimeter</button>
 
       <h4 className="my-5 font-semibold">Here you can add multiple roofs</h4>
@@ -50,7 +50,7 @@ const dilmension = () => {
       <div >
       <Link href="tel:0251-745-045" className="flex items-center gap-1" >
         <PiPhoneCallThin />
-        <p className="text-lime-600	text-sm">0251 - 745 045</p>
+        <p className="text-lime-600	text-sm">0251-745 045</p>
     </Link>
       <Link href="mailto:info@dakvergroeners.nl" className="flex items-center gap-1" >
         <CiMail />
