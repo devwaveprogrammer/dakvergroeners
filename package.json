@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gitdev": "git add . && git commit -m'slider-update-added' && git push origin devforfrontend"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
