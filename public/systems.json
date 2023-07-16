@@ -1,0 +1,51 @@
+ [
+  {
+    "id": 1,
+    "mostChosen": "Most Chosen",
+    "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w340-h240-c170x120-q90/bestanden/cache/store/dakvergroeners/291/groendak-lichtgewichtsysteem.jpg",
+    "title": "Green roof Lightweight system",
+    "features": [
+      "Flat roofs up to 15 degrees slope",
+      "Water buffering of 31 liters per m2",
+      "Easy to install",
+      "Low maintenance",
+      "From € 45.95 p/m²"
+    ]
+  },
+  {
+    "id": 2,
+    "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w340-h240-c170x120-q90/bestanden/cache/store/dakvergroeners/293/groendak-lichthellendsysteem.jpg",
+    "title": "Green roof Slightly inclined system",
+    "features": [
+      "Pitched roofs up to 25 degrees slope",
+      "Water buffering of 31 liters per m2",
+      "Install it yourself, small challenge!",
+      "Low maintenance",
+      "From € 46.95 p/m²"
+    ]
+  },
+  {
+    "id": 3,
+    "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w340-h240-c170x120-q90/bestanden/cache/store/dakvergroeners/13063/sedumtray-cassette.png",
+    "title": "Sedum Tray Cassette",
+    "features": [
+      "Flat roofs up to 15 degrees slope",
+      "Water buffering of 20 liters per m2",
+      "Very easy to install",
+      "Low maintenance",
+      "From € 58.95 p/m²"
+    ]
+  },
+  {
+    "id": 4,
+    "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w340-h240-c170x120-q90/bestanden/cache/store/dakvergroeners/292/sedumtray-lichtgewicht.jpg",
+    "title": "Sedum tray Lightweight",
+    "features": [
+      "Flat roofs up to 15 degrees slope",
+      "Water buffering of 27 liters per m2",
+      "Very easy to install",
+      "Low maintenance",
+      "From € 58.95 p/m²²"
+    ]
+  }
+]
