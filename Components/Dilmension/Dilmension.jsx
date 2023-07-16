@@ -7,8 +7,8 @@ import { CiMail } from 'react-icons/ci';
 
 const dilmension = () => {
   return (
-    <div className="grid grid-cols-3 gap-4 ">
-      <div className="col-span-2  pt-10">
+    
+      <div className="">
       <h1 className="text-2xl mb-5 font-bold">Calculate your green roof here</h1>
       <p className="mb-5">Follow the steps and request your quote, you can also order directly!</p>
       <h3 className="text-xl font-bold">How big is your roof?</h3>
@@ -37,9 +37,9 @@ const dilmension = () => {
         <button className="btn normal-case bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>+</button>
       </div>
 
-      <button className="btn normal-case w-96 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
+      <Link href="/system" className="btn normal-case w-96 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
       Next
-    </button>
+    </Link>
 
     <h1 className="text-3xl font-semibold">Do you have questions?</h1>
     <p className="my-3">We are happy to talk to you!</p>
@@ -58,29 +58,10 @@ const dilmension = () => {
     </Link>
       </div>
     </div>
-
-      </div>
-      {/* Main Devide */}
-      <div className="bg-gray-100 "> 
-      <div className="relative">
-        <Image src="/roof-3@2x.png" width={300} height={500} className="pt-20 absolute right-48"></Image>
-        
-      </div>
-      <div className="pt-96 pl-10" >
-          <h3 className="text-xl font-semibold">Your Green Roof</h3>
-        </div>
-        <div className="flex px-10 pt-5 justify-between text-sm">
-          <div>
-            <p>Surface</p>
-            <p>Circumference</p>
-          </div>
-          <div>
-            <p>1,000 sqm</p>
-            <p>200m</p>
-          </div>
-        </div>
-      </div>
     </div>
+    
+      
+   
   )
 }
 
