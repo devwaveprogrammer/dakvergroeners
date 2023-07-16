@@ -33,7 +33,7 @@ const System = () => {
         {systemData?.map((card, index) => (
           <div
             key={card?.id}
-            className={`card rounded-md p-0  border-gray-400 hover:border-green-500 hover:cursor-pointer border-2 shadow-xl ${index === selectedCardIndex ? 'border-green-500' : 'border-gray-400'}`}
+            className={`card rounded-md p-0  border-gray-400 hover:border-red-400 hover:cursor-pointer border-2 shadow-xl ${index === selectedCardIndex ? 'border-green-500' : 'border-gray-400'}`}
             onClick={() => handleCardClick(index)}
           >
             <div className="relative">
