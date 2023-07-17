@@ -8,9 +8,10 @@
       "Flat roofs up to 15 degrees slope",
       "Water buffering of 31 liters per m2",
       "Easy to install",
-      "Low maintenance",
-      "From € 45.95 p/m²"
-    ]
+      "Low maintenance"
+    ],
+    "price": 45.95
+
   },
   {
     "id": 2,
@@ -20,9 +21,9 @@
       "Pitched roofs up to 25 degrees slope",
       "Water buffering of 31 liters per m2",
       "Install it yourself, small challenge!",
-      "Low maintenance",
-      "From € 46.95 p/m²"
-    ]
+      "Low maintenance"
+    ],
+    "price": 45.95
   },
   {
     "id": 3,
@@ -32,9 +33,9 @@
       "Flat roofs up to 15 degrees slope",
       "Water buffering of 20 liters per m2",
       "Very easy to install",
-      "Low maintenance",
-      "From € 58.95 p/m²"
-    ]
+      "Low maintenance"
+    ],
+    "price": 58.95
   },
   {
     "id": 4,
@@ -44,8 +45,9 @@
       "Flat roofs up to 15 degrees slope",
       "Water buffering of 27 liters per m2",
       "Very easy to install",
-      "Low maintenance",
-      "From € 58.95 p/m²²"
-    ]
+      "Low maintenance"
+    
+    ],
+    "price": 58.95
   }
 ]
