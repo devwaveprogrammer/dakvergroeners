@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gitdev": "git add . && git commit -m'I create send step page! create json card data and fetch data from public folder and made cards and complete the ui as well as doing a lot of effective work' && git push origin devforfrontend"
+    "gitdev": "git add . && git commit -m'I create send step page! create json card data and fetch data from public folder and made cards and complete the ui as well as doing a lot of effective work' && git push origin merge2"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
