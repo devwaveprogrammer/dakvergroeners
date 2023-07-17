@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React, { useContext } from 'react'
 
 const Aside = () => {
-  const {surface,circumference} = useContext(DataContext)
+  const {surface,circumference,selectedValues} = useContext(DataContext)
   return (
    
       <div className="bg-gray-100 pb-24 "> 
@@ -20,10 +20,12 @@ const Aside = () => {
           <div>
             <p>Surface</p>
             <p>Circumference</p>
+            <p>Circumference</p>
           </div>
           <div>
             <p>{surface} sqm</p>
             <p>{circumference}m</p>
+            <p>{selectedValues[0]}m</p>
           </div>
         </div>
       </div>
