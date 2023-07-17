@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gitdev": "git add . && git commit -m'functionalites-added' && git push origin devforbackend"
+    "gitdev": "git add . && git commit -m'navbar-added' && git push origin devforbackend"
   
   },
   "dependencies": {

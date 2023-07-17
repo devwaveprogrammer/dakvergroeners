@@ -56,7 +56,7 @@ const System = () => {
         ))}
       </div>
       <div>
-      <Link href="/system" className="btn normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
+      <Link href="/" className="btn normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
       <BsArrowLeft className="text-xl"/>   Previos Step 
     </Link>
       <Link href="/system" className="btn normal-case w-48 animate-none my-5 bg-red-400 hover:bg-red-400 hover:shadow-lg text-white " >

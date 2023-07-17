@@ -1,7 +1,11 @@
+"use client"
+
+import { DataContext } from '@/Context/DataProvider'
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
 
 const Aside = () => {
+  const {surface,circumference} = useContext(DataContext)
   return (
    
       <div className="bg-gray-100 pb-24 "> 
@@ -18,8 +22,8 @@ const Aside = () => {
             <p>Circumference</p>
           </div>
           <div>
-            <p>1,000 sqm</p>
-            <p>200m</p>
+            <p>{surface} sqm</p>
+            <p>{circumference}m</p>
           </div>
         </div>
       </div>
