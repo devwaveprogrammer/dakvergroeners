@@ -8,7 +8,8 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 const System = () => {
   const [systemData, setSystemData] = useState(null);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
-  const { selectedValues, handleInputChange } = useContext(DataContext);
+  
+  const { setPrice, setTitle } = useContext(DataContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,15 +20,20 @@ const System = () => {
 
     fetchData();
   }, []);
-console.log(selectedValues)
-  const handleCardClick = (index) => {
+// console.log(price)
+  const handleCardClick = (index,price,title) => {
     setSelectedCardIndex(index);
+    setPrice(price);
+    setTitle(title);
   };
 //   const handleInputChange = (event, index) => {
 //   const inputValue = event.target.checked ? event.target.value : null;
 //   // console.log(`Input ${index + 1} value`, inputValue);
 //   return
 // };
+
+
+
   return (
     <div>
       <div className="mb-10">
@@ -51,7 +57,7 @@ console.log(selectedValues)
                 ? "border-green-500"
                 : "border-gray-400"
             }`}
-            onClick={() => handleCardClick(index)}
+            onClick={() => handleCardClick(index, card?.price, card?.title)}
           >
             <div className="relative">
               <input

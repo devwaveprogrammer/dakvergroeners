@@ -5,7 +5,8 @@ import Image from 'next/image'
 import React, { useContext } from 'react'
 
 const Aside = () => {
-  const {surface,circumference,selectedValues} = useContext(DataContext)
+  const {surface,circumference,price,title} = useContext(DataContext)
+  const Postage = 59
   return (
    
       <div className="bg-gray-100 pb-24 "> 
@@ -20,12 +21,25 @@ const Aside = () => {
           <div>
             <p>Surface</p>
             <p>Circumference</p>
-            <p>Circumference</p>
+            <p>{title}</p>
           </div>
           <div>
             <p>{surface} sqm</p>
             <p>{circumference}m</p>
-            <p>{selectedValues[0]}m</p>
+            <p >€ {price}</p>
+          </div>
+        </div>
+        <hr/>
+        <div className="flex px-10 pt-5 justify-between text-sm">
+          <div>
+            <p>Postage costs	</p>
+            <p className='font-bold'>Total</p>
+           
+          </div>
+          <div>
+            <p>€ 59.00</p>
+            <p className='font-bold'>€ {(price * surface) + Postage}</p>
+            
           </div>
         </div>
       </div>

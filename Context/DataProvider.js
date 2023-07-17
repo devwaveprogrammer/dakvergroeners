@@ -11,14 +11,8 @@ export default function DataProvider({ children }) {
   const [circumference, setCircumference] = useState("");
   const [toggle, setToggle] = useState(true);
 
-  const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleInputChange = (event, index) => {
-    const inputValue = event.target.checked ? event.target.value : null;
-    // console.log(`Input ${index + 1} value`, inputValue);
-    setSelectedValues([inputValue,index])
-    return
-  };
+  const [price, setPrice] = useState(0);
+  const [title, setTitle] = useState(0);
 
   const info = {
     length,
@@ -31,8 +25,10 @@ export default function DataProvider({ children }) {
     setCircumference,
     toggle,
     setToggle,
-    selectedValues,
-    handleInputChange,
+    price,
+    setPrice,
+    title,
+    setTitle,
   };
 
   return (

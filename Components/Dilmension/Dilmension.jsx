@@ -28,9 +28,10 @@ const Dilmension = () => {
 
   const toggleCalculation = () => {
     if (toggle) {
+      
       const calculatedSurface = length * width;
-      const calculatedCircumference =
-        2 * (parseFloat(length) + parseFloat(width));
+      const calculatedCircumference = 2 * (parseFloat(length) + parseFloat(width));
+        
 
       setSurface(calculatedSurface.toFixed(2));
       setCircumference(calculatedCircumference.toFixed(2));
