@@ -33,7 +33,7 @@ const GravelStrip = () => {
 
         <div className="flex">
         {
-            gravelStrip?.map((card, index) => <div key={index} className={`flex rounded-md m-10 cursor-pointer bg-gray-200 gap-3  shadow-xl ${
+            gravelStrip?.map((card, index) => <div key={index} className={`flex rounded-md mr-10 my-10 cursor-pointer bg-gray-200 gap-3  shadow-xl ${
               index === selectCardIndex
               
             }`}
@@ -51,9 +51,9 @@ const GravelStrip = () => {
                    
                     />
                 </div>
-                 <Image src={card?.img} width={150} height={80}></Image> 
+                 <Image className="rounded-l-lg" src={card?.img} width={150} height={80}></Image> 
                   </div>  
-              <div>
+              <div className="pr-5">
                 <h1 className="text-base font-semibold pt-5">{card?.title}</h1>
                 <p className="text-xs font-semibold">{card?.decs}</p>
               
