@@ -74,23 +74,26 @@ const Dilmension = () => {
                 onChange={(e) => setWidth(e.target.value)} placeholder="Type here" className="input input-bordered max-w-xs  focus:outline-none w-44" />
       </div>
       </div></form>
-      <button onClick={toggleCalculation} className="btn normal-case animate-pulse bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
-      {buttonText}</button>
+      <button 
+      onClick={toggleCalculation} 
+      className="btn normal-case animate-none no-animation bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" >
+      {buttonText}
+      </button>
 
           <h4 className="my-5 font-semibold">
             Here you can add multiple roofs
           </h4>
           <div className="">
-            <button className="btn btn-outline mr-5">Roof 1</button>
+            <button className="btn btn-outline mr-5 no-animation">Roof 1</button>
             <button
               className="btn normal-case bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
-              style={{ transition: "background-color 0.3s, box-shadow 0.3s " }}
+              
             >
               +
             </button>
           </div>
 
-      <Link href="/system" className="btn normal-case w-96 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg" style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}>
+      <Link href="/system" className="btn normal-case w-96 animate-none no-animation my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg">
       Next
     </Link>
 

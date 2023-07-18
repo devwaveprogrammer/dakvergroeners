@@ -98,16 +98,16 @@ const System = () => {
       <div>
         <Link
           href="/"
-          className="btn normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
+          className="btn no-animation normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
           style={{ transition: "background-color 0.3s, box-shadow 0.3s " }}
         >
-          <BsArrowLeft className="text-xl" /> Previos Step
+          <BsArrowLeft className="text-xl no-animation" /> Previos Step
         </Link>
         <Link
-          href="/system"
+          href="/gravelstripe"
           className="btn normal-case w-48 animate-none my-5 bg-red-400 hover:bg-red-400 hover:shadow-lg text-white "
         >
-          Next Step <BsArrowRight className="text-xl" />
+          Next Step <BsArrowRight className="text-xl no-animation" />
         </Link>
       </div>
     </div>
