@@ -17,6 +17,12 @@ const Aside = () => {
       <div className="pt-96 pl-10" >
           <h3 className="text-xl font-semibold">Your Green Roof</h3>
         </div>
+        {!surface  ? 
+        <div className='bg-[#fcf8e3] w-72'>
+<p className='p-5'>Unfortunately, we cannot yet <br/> calculate your green roof. First enter <br/> the dimensions and other options.</p>
+        </div>
+      :
+      <div>
         <div className="flex px-10 pt-5 justify-between text-sm">
           <div>
             <p>Surface</p>
@@ -42,6 +48,9 @@ const Aside = () => {
             
           </div>
         </div>
+        </div>  
+      
+      }
       </div>
   
   )

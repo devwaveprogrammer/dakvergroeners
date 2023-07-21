@@ -29,12 +29,12 @@ const Navbar = () => {
     <ul className="">
     <li className='pr-2'><Link href='/'>Dilmension</Link></li> 
     <li className='pr-2'><Link href='/system'>System</Link></li> 
-    <li className='pr-2'><Link href='/system'>Gravel Strip</Link></li> 
-    <li className='pr-2'><Link href='/system'>Obstacles</Link></li> 
-    <li className='pr-2'><Link href='/system'>Water Drainage</Link></li> 
-    <li className='pr-2'><Link href='/system'>Fertillizer</Link></li> 
-    <li className='pr-2'><Link href='/system'>Mooring</Link></li> 
-    <li className='pr-2'><Link href='/system'>Complete</Link></li> 
+    <li className='pr-2'><Link href='/gravelstripe'>Gravel Strip</Link></li> 
+    <li className='pr-2'><Link href='/obstacles'>Obstacles</Link></li> 
+    <li className='pr-2'><Link href='/waterdrainage'>Water Drainage</Link></li> 
+    <li className='pr-2'><Link href='/fertillizer'>Fertillizer</Link></li> 
+    <li className='pr-2'><Link href='/mooring'>Mooring</Link></li> 
+    <li className='pr-2'><Link href='/complete'>Complete</Link></li> 
     
     </ul>
   </div>

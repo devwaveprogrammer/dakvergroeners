@@ -5,8 +5,8 @@ const { createContext, useState } = require("react");
 export const DataContext = createContext();
 
 export default function DataProvider({ children }) {
-  const [length, setLength] = useState("5");
-  const [width, setWidth] = useState("7");
+  const [length, setLength] = useState("");
+  const [width, setWidth] = useState("");
   const [surface, setSurface] = useState("");
   const [circumference, setCircumference] = useState("");
   const [toggle, setToggle] = useState(true);
