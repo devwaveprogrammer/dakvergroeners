@@ -4,7 +4,7 @@ const nextConfig = {}
 module.exports = nextConfig
 module.exports = {
     images: {
-      domains: ['www.dakvergroeners.nl','themewagon.com'],
+      domains: ['www.dakvergroeners.nl'],
     },
   };
   

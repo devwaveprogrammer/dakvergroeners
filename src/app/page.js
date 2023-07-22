@@ -1,4 +1,6 @@
-import Dilmension from "../Components/Dilmension/Dilmension"
+import Dilmension from "../Components/Dilmension/Dilmension";
+
+
 
 
 export default function Home() {

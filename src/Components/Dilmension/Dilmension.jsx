@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiPhoneCallThin } from "react-icons/pi";
 import { CiMail } from "react-icons/ci";
-import { DataContext } from "@/Context/DataProvider";
+import { DataContext } from "@/src/Context/DataProvider";
+
 
 const Dilmension = () => {
   const {

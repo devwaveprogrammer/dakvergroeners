@@ -1,6 +1,7 @@
 "use client"
 
-import { DataContext } from '@/Context/DataProvider'
+
+import { DataContext } from '@/src/Context/DataProvider'
 import Image from 'next/image'
 import React, { useContext } from 'react'
 

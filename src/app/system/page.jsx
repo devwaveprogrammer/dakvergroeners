@@ -1,4 +1,4 @@
-import System from '@/Components/System/System'
+import System from '@/src/Components/System/System'
 import React from 'react'
 
 const system = () => {

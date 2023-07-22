@@ -1,4 +1,4 @@
-import WaterDrainage from '@/Components/WaterDrainage/WaterDrainage';
+import WaterDrainage from '@/src/Components/WaterDrainage/WaterDrainage';
 import React from 'react';
 
 const waterDrainage = () => {

@@ -1,4 +1,4 @@
-import Mooring from '@/Components/Mooring/Mooring'
+import Mooring from '@/src/Components/Mooring/Mooring'
 import React from 'react'
 
 export default function mooring() {

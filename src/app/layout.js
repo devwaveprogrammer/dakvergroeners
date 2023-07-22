@@ -1,8 +1,10 @@
-import DataProvider from '@/Context/DataProvider'
-import Navbar from '@/Components/Navbar/Navbar'
+
+
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Aside from '@/Components/Aside/Aside'
+import DataProvider from '../Context/DataProvider'
+import Navbar from '../Components/Navbar/Navbar'
+import Aside from '../Components/Aside/Aside'
 
 const inter = Inter({ subsets: ['latin'] })
 

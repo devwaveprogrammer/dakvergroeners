@@ -1,4 +1,4 @@
-import GravelStrip from '@/Components/GravelStrip/GravelStrip'
+import GravelStrip from '@/src/Components/GravelStrip/GravelStrip'
 import React from 'react'
 
 const gravelstripe = () => {
