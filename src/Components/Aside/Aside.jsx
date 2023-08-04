@@ -12,7 +12,7 @@ const Aside = () => {
    
       <div className="bg-gray-100 pb-24 "> 
       <div className="relative">
-        <Image src="/roof-3@2x.png" width={300} height={500} className="pt-20 absolute right-48"></Image>
+        <Image src="/roof-3@2x.png" width={300} height={500} className="pt-20 absolute right-48" alt=''></Image>
         
       </div>
       <div className="pt-96 pl-10" >

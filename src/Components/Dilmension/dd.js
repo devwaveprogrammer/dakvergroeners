@@ -33,37 +33,25 @@ const Dilmension = () => {
   useEffect(() => {
     // Retrieve the previously stored roof-layouts data from local storage
     const storedRoofLayouts = localStorage.getItem("roof-layouts");
-  
+
     if (!storedRoofLayouts) {
       // Storing the roofLayouts data in local storage
       localStorage.setItem("roof-layouts", JSON.stringify(roofLayouts));
-    } else {
-      const parsedArray = JSON.parse(storedRoofLayouts);
-      const selectedObj = parsedArray.find((obj) => obj?.current === true);
-  
-      if (selectedObj) {
-        setLength(selectedObj.alength);
-        setWidth(selectedObj.width);
-      }
     }
+    const parsedArray = JSON.parse(storedRoofLayouts);
+    parsedArray?.map((item) => {
+      setLength(item?.alength);
+      setWidth(item?.width);
+    });
   }, []);
 
   useEffect(() => {
-    const parsedArrayeee = JSON.parse(localStorage.getItem("roof-layouts"));
-    const updatedArray = parsedArrayeee.map((obj) => {
-      if (obj?.current === true) {
-        const updatedObj = {
-          ...obj,
-          width: width,
-          length: length,
-          surface: surface,
-          circumference: circumference,
-        };
-        return updatedObj;
-      }
-      return obj;
+    const updatedRoofLayouts = roofLayouts.map((obj) => {
+      return {
+        ...obj,
+        current: current === true, // Update the current value based on your condition
+      };
     });
-    localStorage.setItem("roof-layouts", JSON.stringify(updatedArray));
 
     const calculatedSurface = length * width;
     const calculatedCircumference =
@@ -71,7 +59,8 @@ const Dilmension = () => {
     setSurface(calculatedSurface);
     setCircumference(calculatedCircumference);
 
-  }, [length, width,surface,circumference]);
+    localStorage.setItem("roof-layouts", JSON.stringify(updatedRoofLayouts));
+  }, [length, width]);
 
   const toggleCalculation = () => {
     if (toggle) {
@@ -86,7 +75,7 @@ const Dilmension = () => {
     const storedRoofLayoutVale2 = localStorage.getItem("roof-layouts");
     const parsedArrayLen = JSON.parse(storedRoofLayoutVale2);
     setDataa(parsedArrayLen);
-  }, [dataa]);
+  }, []);
 
   const handleRoof = () => {
     let data = JSON.parse(localStorage.getItem("roof-layouts"));

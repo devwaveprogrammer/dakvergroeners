@@ -51,7 +51,7 @@ const GravelStrip = () => {
                    
                     />
                 </div>
-                 <Image className="rounded-l-lg" src={card?.img} width={150} height={80}></Image> 
+                 <Image className="rounded-l-lg" src={card?.img} width={150} height={80} alt=""/>
                   </div>  
               <div className="pr-5">
                 <h1 className="text-base font-semibold pt-5">{card?.title}</h1>

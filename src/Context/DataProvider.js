@@ -10,6 +10,7 @@ export default function DataProvider({ children }) {
   const [surface, setSurface] = useState("");
   const [circumference, setCircumference] = useState("");
   const [toggle, setToggle] = useState(true);
+  const [roofs, setRoofs] = useState([]);
 
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState(0);
@@ -28,7 +29,7 @@ export default function DataProvider({ children }) {
     price,
     setPrice,
     title,
-    setTitle,
+    setTitle,roofs, setRoofs
   };
 
   return (
