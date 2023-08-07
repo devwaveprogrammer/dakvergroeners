@@ -5,12 +5,11 @@ const { createContext, useState } = require("react");
 export const DataContext = createContext();
 
 export default function DataProvider({ children }) {
-  const [length, setLength] = useState("");
-  const [width, setWidth] = useState("");
-  const [surface, setSurface] = useState("");
-  const [circumference, setCircumference] = useState("");
-  const [toggle, setToggle] = useState(true);
-  const [roofs, setRoofs] = useState([]);
+  const [length, setLength] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [surface, setSurface] = useState(0);
+  const [circumference, setCircumference] = useState(0);
+  const [dataa, setDataa] = useState();
 
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState(0);
@@ -24,12 +23,10 @@ export default function DataProvider({ children }) {
     setSurface,
     circumference,
     setCircumference,
-    toggle,
-    setToggle,
     price,
     setPrice,
     title,
-    setTitle,roofs, setRoofs
+    setTitle,dataa, setDataa
   };
 
   return (

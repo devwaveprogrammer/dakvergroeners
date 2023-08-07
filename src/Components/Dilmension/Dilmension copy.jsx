@@ -8,10 +8,13 @@ import { CiMail } from "react-icons/ci";
 import { DataContext } from "@/src/Context/DataProvider";
 
 const Dilmension = () => {
-  const {surface,circumference,length,width,setLength,setWidth,setSurface,setCircumference,setDataa,dataa} = useContext(DataContext)
- 
+  const [length, setLength] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [surface, setSurface] = useState(0);
+  const [circumference, setCircumference] = useState(0);
   const [toggle, setToggle] = useState(true);
   const [current, setCurrent] = useState(true);
+  const [dataa, setDataa] = useState();
 
   const [buttonText, setButtonText] = useState(
     "I prefer to fill in the surface and perimeter"
@@ -33,14 +36,12 @@ const Dilmension = () => {
   
 
  
-  // useEffect(() => {
-  //   // const storedRoofLayouts = localStorage.getItem("roof-layouts");
-  //   // const parsedArray = JSON.parse(storedRoofLayouts);
-  //   // setDataa(parsedArray);
-  //   getDataFromLocalStorageAndSetDataa()
-  // },[]);
-
-
+  useEffect(() => {
+    // const storedRoofLayouts = localStorage.getItem("roof-layouts");
+    // const parsedArray = JSON.parse(storedRoofLayouts);
+    // setDataa(parsedArray);
+    getDataFromLocalStorageAndSetDataa()
+  },[]);
 
   const roofLayouts = [
     {
@@ -63,7 +64,7 @@ const Dilmension = () => {
        
     } else {
       const parsedArray = JSON.parse(storedRoofLayouts);
-      getDataFromLocalStorageAndSetDataa()
+      setDataa(parsedArray)
         const selectedObj = parsedArray.find((obj) => obj?.current === true);
   
         if (selectedObj) {
@@ -101,7 +102,7 @@ const Dilmension = () => {
       2 * (parseFloat(length) + parseFloat(width));
     setSurface(calculatedSurface);
     setCircumference(calculatedCircumference);
-    setDataa(parsedArrayeee);
+
   }, [length, width,surface,circumference]);
 
   const toggleCalculation = () => {
@@ -116,11 +117,10 @@ const Dilmension = () => {
  
 const handleRoof=(index)=>{
   let data = JSON.parse(localStorage.getItem("roof-layouts"));
- setDataa(data)
+
 data.forEach((item, i) => {
   // Set the 'current' property to true for the selected index and false for others
   item.current = i === index;
-  
 });
   
 // Store the updated data back into localStorage
@@ -179,7 +179,6 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
               <input
   type="number"
   value={dataa?.find((item) => item.current === true)?.[toggle ? "length" : "surface"] }
- 
   onChange={(e) => setLength(e.target.value)}
   className="input input-bordered max-w-xs focus:outline-none w-44"
 />

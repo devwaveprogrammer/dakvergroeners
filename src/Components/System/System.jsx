@@ -26,6 +26,7 @@ const System = () => {
     setSelectedCardIndex(index);
     setPrice(price);
     setTitle(title);
+   
   };
 //   const handleInputChange = (event, index) => {
 //   const inputValue = event.target.checked ? event.target.value : null;
@@ -52,7 +53,7 @@ const System = () => {
       <div className="flex gap-5 pr-10">
         {systemData?.map((card, index) => (
           <div
-            key={card?.id}
+            key={index}
             className={`card rounded-md p-0  border-gray-400 hover:border-green-500 hover:cursor-pointer border-2 shadow-xl ${
               index === selectedCardIndex
                 ? "border-green-500"

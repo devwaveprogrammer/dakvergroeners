@@ -33,7 +33,7 @@ export default function WaterDrainage() {
     <>
     <div className="grid grid-cols-2 gap-4">
         {
-            data.map(item=> <div key={item.id} class="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg">
+            data.map(item=> <div key={item?.id} class="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg">
         <div class="w-1/3 bg-cover bg-landscape">
           <img
             src={item.img}
