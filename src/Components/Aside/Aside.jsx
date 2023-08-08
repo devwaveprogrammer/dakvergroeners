@@ -2,12 +2,15 @@
 
 import { DataContext } from '@/src/Context/DataProvider'
 import Image from 'next/image'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 const Aside = () => {
-  const { surface, circumference, price, title, dataa } = useContext(DataContext)
+  const { surface, circumference, price, title, dataa, setDataa} = useContext(DataContext)
   const Postage = 59
-
+  useEffect(()=>{
+    const getstored = JSON.parse(localStorage.getItem("roof-layouts"));
+    setDataa(getstored)
+  })
   // Calculate totalSurface and totalCircumference only if dataa has elements
   const totalSurface = dataa?.length > 0 ? dataa.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.surface;
@@ -17,7 +20,7 @@ const Aside = () => {
   const totalCircumference = dataa?.length > 0 ? dataa.reduce((accumulator, currentValue) => {
     return accumulator + parseFloat(currentValue.circumference); // Use parseFloat to convert strings to numbers
   }, 0) : 0;
-
+const alltotal = ((price * totalSurface) + Postage).toFixed(2)
   return (
     <div className="bg-gray-100 pb-24 ">
       <div className="relative">
@@ -26,21 +29,21 @@ const Aside = () => {
       <div className="pt-96 pl-10" >
         <h3 className="text-xl font-semibold">Your Green Roof</h3>
       </div>
-      {!surface ?
-        <div className='bg-[#fcf8e3] w-72'>
+      {/* {!surface ? */}
+        {/* <div className='bg-[#fcf8e3] w-72'>
           <p className='p-5'>Unfortunately, we cannot yet <br /> calculate your green roof. First enter <br /> the dimensions and other options.</p>
-        </div>
-        :
+        </div> */}
+        {/* : */}
         <div>
           <div className="flex px-10 pt-5 justify-between text-sm">
             <div>
               <p>Surface</p>
               <p>Circumference</p>
-              {title >0 && 
+              {title !== "0" && 
               <p>{title}</p>
               }
             </div>
-            <div>
+            <div>  
               <p>{totalSurface} sqm</p>
               <p>{totalCircumference}m</p>
               {
@@ -48,20 +51,23 @@ const Aside = () => {
               <p>€ {price}</p>
               }
             </div>
-          </div>
-          <hr />
+          </div> {
+            price &&
+         <> <hr />
           <div className="flex px-10 pt-5 justify-between text-sm">
             <div>
               <p>Postage costs</p>
               <p className='font-bold'>Total</p>
             </div>
+          
             <div>
-              <p>€ 59.00</p>
-              <p className='font-bold'>€ {(price * surface) + Postage}</p>
-            </div>
+            <p>€ 59.00</p>
+            <p className='font-bold'>€ {alltotal}</p>
           </div>
+          
+          </div></> }
         </div>
-      }
+      {/* } */}
     </div>
   )
 }

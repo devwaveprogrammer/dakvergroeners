@@ -11,6 +11,7 @@ const System = () => {
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
   
   const { setPrice, setTitle } = useContext(DataContext);
+  
 
   useEffect(() => {
     const fetchData = async () => {

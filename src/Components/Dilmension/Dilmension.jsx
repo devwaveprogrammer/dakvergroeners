@@ -142,7 +142,7 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
     };
     data.push(roofLayout);
     localStorage.setItem("roof-layouts", JSON.stringify(data));
-    getDataFromLocalStorageAndSetDataa()
+    // getDataFromLocalStorageAndSetDataa()
     setWidth(0);  
     setLength(0);
     setCircumference(0)
