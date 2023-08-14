@@ -7,10 +7,10 @@ import React, { useContext, useEffect } from 'react'
 const Aside = () => {
   const { surface, circumference, price, title, dataa, setDataa,gravelTitle,gravelPrice} = useContext(DataContext)
   const Postage = 59
-  useEffect(()=>{
-    const getstored = JSON.parse(localStorage.getItem("roof-layouts"));
-    setDataa(getstored)
-  })
+  // useEffect(()=>{
+  //   const getstored = JSON.parse(localStorage.getItem("roof-layouts"));
+  //   setDataa(getstored)
+  // })
   // Calculate totalSurface and totalCircumference only if dataa has elements
   const totalSurface = dataa?.length > 0 ? dataa.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.surface;
