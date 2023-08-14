@@ -13,6 +13,10 @@ export default function DataProvider({ children }) {
 
   const [price, setPrice] = useState(0);
   const [title, setTitle] = useState(0);
+  const [gravelPrice, setGravelPrice] = useState(0);
+  const [gravelTitle, setGravelTitle] = useState(0);
+  const [totalPrices, setTotalPrices] = useState(0);
+  const [totalName, setTotalName] = useState([]);
 
   const info = {
     length,
@@ -26,9 +30,19 @@ export default function DataProvider({ children }) {
     price,
     setPrice,
     title,
-    setTitle,dataa, setDataa
+    setTitle,
+    dataa,
+    setDataa,
+    totalPrices,
+    setTotalPrices,
+    gravelPrice,
+    setGravelPrice,
+    gravelTitle,
+    setGravelTitle,
+    totalName,
+    setTotalName,
   };
-
+  console.log(totalName);
   return (
     <div>
       <DataContext.Provider value={info}>{children}</DataContext.Provider>

@@ -1,16 +1,13 @@
 "use client"
-import { DataContext } from "@/src/Context/DataProvider";
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 export default function WaterDrainage() {
-  const {setTotalPrices,setTotalName}=useContext(DataContext)
-
   const [data, setData] = useState([
     {
       id: 1,
-      name: "Water Drainage1",
+      name: "Water Drainage",
       img:"https://www.dakvergroeners.nl/lcms2/RESIZE/w158-h9999-c158x158-q90/bestanden/cache/store/dakvergroeners/352/bolrooster-rvs-o-8-cm.jpg",
       description:
         "The water drainage system in a building or other structure ensures that the flow of fresh",
@@ -19,7 +16,7 @@ export default function WaterDrainage() {
     },
     {
       id: 2,
-      name: "Water Drainage2",
+      name: "Water Drainage",
       img:"https://www.dakvergroeners.nl/lcms2/RESIZE/w158-h9999-c158x158-q90/bestanden/cache/store/dakvergroeners/258/groendak-bladvanger-kunststof.png",
       description:
         "The water drainage system in a building or other structure ensures that the flow of fresh",
@@ -28,7 +25,7 @@ export default function WaterDrainage() {
     },
     {
       id: 3,
-      name: "Water Drainage3",
+      name: "Water Drainage",
       img:"https://www.dakvergroeners.nl/lcms2/RESIZE/w158-h9999-c158x158-q90/bestanden/cache/store/dakvergroeners/356/groendak-tegelbladvanger-kunststof-excl-tegel.jpg",
       description:
         "The water drainage system in a building or other structure ensures that the flow of fresh",
@@ -36,25 +33,6 @@ export default function WaterDrainage() {
        quantity: 0,
     },
   ])
-
-
-  
-// console.log(totalPrices)
-useEffect(()=>{
-
- data?.map((item) => {
-    if(item?.quantity > 0){
-      setTotalPrices(item?.price * item?.quantity);
-      setTotalName(item?.name);
-    }
-   
-  });
-
- 
-},[data])
-
-
-
   return (
     <>
     <div className="grid grid-cols-2 gap-4">
@@ -86,7 +64,6 @@ useEffect(()=>{
           product.id === item.id ? { ...product, quantity: newQuantity } : product
         );
         setData(updatedData); // Update the state with the new quantity
-       
       }
     }}
   />

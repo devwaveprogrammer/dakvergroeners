@@ -5,12 +5,12 @@ import Image from 'next/image'
 import React, { useContext, useEffect } from 'react'
 
 const Aside = () => {
-  const { surface, circumference, price, title, dataa, setDataa} = useContext(DataContext)
+  const { surface, circumference, price, title, dataa, setDataa,gravelTitle,gravelPrice} = useContext(DataContext)
   const Postage = 59
-  useEffect(()=>{
-    const getstored = JSON.parse(localStorage.getItem("roof-layouts"));
-    setDataa(getstored)
-  })
+  // useEffect(()=>{
+  //   const getstored = JSON.parse(localStorage.getItem("roof-layouts"));
+  //   setDataa(getstored)
+  // })
   // Calculate totalSurface and totalCircumference only if dataa has elements
   const totalSurface = dataa?.length > 0 ? dataa.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.surface;
@@ -29,11 +29,11 @@ const alltotal = ((price * totalSurface) + Postage).toFixed(2)
       <div className="pt-96 pl-10" >
         <h3 className="text-xl font-semibold">Your Green Roof</h3>
       </div>
-      {/* {!surface ? */}
-        {/* <div className='bg-[#fcf8e3] w-72'>
+      {!surface ?
+        <div className='bg-[#fcf8e3] w-72'>
           <p className='p-5'>Unfortunately, we cannot yet <br /> calculate your green roof. First enter <br /> the dimensions and other options.</p>
-        </div> */}
-        {/* : */}
+        </div>
+        :
         <div>
           <div className="flex px-10 pt-5 justify-between text-sm">
             <div>
@@ -42,6 +42,9 @@ const alltotal = ((price * totalSurface) + Postage).toFixed(2)
               {title !== "0" && 
               <p>{title}</p>
               }
+              {gravelTitle !== "0" && 
+              <p>{gravelTitle}</p>
+              }
             </div>
             <div>  
               <p>{totalSurface} sqm</p>
@@ -49,6 +52,10 @@ const alltotal = ((price * totalSurface) + Postage).toFixed(2)
               {
                 price >0 &&
               <p>€ {price}</p>
+              }
+              {
+                gravelPrice >0 &&
+              <p>€ {gravelPrice}</p>
               }
             </div>
           </div> {
@@ -67,7 +74,7 @@ const alltotal = ((price * totalSurface) + Postage).toFixed(2)
           
           </div></> }
         </div>
-      {/* } */}
+       }
     </div>
   )
 }

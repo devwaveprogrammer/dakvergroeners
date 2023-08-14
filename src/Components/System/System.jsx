@@ -18,9 +18,15 @@ const System = () => {
       const res = await fetch("/systems.json");
       const data = await res.json();
       setSystemData(data);
+
+      if (data && data.length > 0) {
+        const initialCard = data[selectedCardIndex];
+        setPrice(initialCard?.price);
+        setTitle(initialCard?.title);
+      }
     };
 
-    fetchData();
+    fetchData(); 
   }, []);
 // console.log(price)
   const handleCardClick = (index,price,title) => {

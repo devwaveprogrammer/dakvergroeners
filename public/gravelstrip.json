@@ -3,12 +3,17 @@
       "id": 1,
       "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w140-h9999-c140x120-q90/maatwerk/roof-calculator/img/conf-dakgrind.jpg",
       "title": "Yes please!",
-      "decs": "Gravel strip of 10 cm around my eaves."
+      "decs": "Gravel strip of 10 cm around my eaves.",
+      "gTitle":"Gravel strip 10 cm (10 bags)",
+      "price": "59.50"
+      
     },
     {
       "id": 2,
       "img": "https://www.dakvergroeners.nl/lcms2/RESIZE/w140-h9999-c140x120-q90/maatwerk/roof-calculator/img/roof@2x.jpg",
       "title": "No, not applicable",
-      "decs": "No gravel strip around my eaves"
+      "decs": "No gravel strip around my eaves",
+      "gTitle":"",
+      "price": ""
     }
   ]

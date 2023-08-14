@@ -206,7 +206,7 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
           </button>
         </div>
      
-   
+      </form>
 
       <h4 className="my-5 font-semibold">Here you can add multiple roofs</h4>
       <div className="">
@@ -235,7 +235,7 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
       >
         Next
       </Link>
-      </form>
+
       <h1 className="text-3xl font-semibold">Do you have questions?</h1>
       <p className="my-3">We are happy to talk to you!</p>
       <div className="flex gap-5 items-center">

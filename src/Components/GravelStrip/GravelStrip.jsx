@@ -2,15 +2,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { DataContext } from '@/src/Context/DataProvider';
 
 const GravelStrip = () => {
     const [gravelStrip, setGravelStrip] = useState(null);
     const [selectCardIndex, setSelectedCardIndex] = useState(0);
+    const { setGravelTitle, setGravelPrice } = useContext(DataContext);
 
-
-    const handleCardClick = (index) =>{
+    const handleCardClick = (index, title, price) =>{
             setSelectedCardIndex(index)
+            setGravelTitle(title);
+              setGravelPrice(price);
     };
 
 
@@ -19,6 +22,14 @@ const GravelStrip = () => {
             const res = await fetch("/gravelstrip.json");
             const data = await res.json();
             setGravelStrip(data);
+
+            if (data && data.length > 0  ) {
+              const initialCard = data[selectCardIndex];
+      
+              setGravelTitle(initialCard?.gTitle);
+              setGravelPrice(initialCard?.price);
+              
+            }
         }
         fetchData()
     }, [])
@@ -37,7 +48,7 @@ const GravelStrip = () => {
               index === selectCardIndex
               
             }`}
-            onClick={(e) =>handleCardClick(index)}
+            onClick={(e) =>handleCardClick(index, card?.gTitle, card?.price)}
             >
               
                 <div>
