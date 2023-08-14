@@ -42,7 +42,7 @@ export default function DataProvider({ children }) {
     totalName,
     setTotalName,
   };
-  console.log(totalName);
+
   return (
     <div>
       <DataContext.Provider value={info}>{children}</DataContext.Provider>

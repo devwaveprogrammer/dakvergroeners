@@ -101,7 +101,7 @@ const Dilmension = () => {
       2 * (parseFloat(length) + parseFloat(width));
     setSurface(calculatedSurface);
     setCircumference(calculatedCircumference);
-    setDataa(parsedArrayeee);
+    getDataFromLocalStorageAndSetDataa()
   }, [length, width,surface,circumference]);
 
   const toggleCalculation = () => {
