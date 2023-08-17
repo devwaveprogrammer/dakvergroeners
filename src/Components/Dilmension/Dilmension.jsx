@@ -6,6 +6,7 @@ import Link from "next/link";
 import { PiPhoneCallThin } from "react-icons/pi";
 import { CiMail } from "react-icons/ci";
 import { DataContext } from "@/src/Context/DataProvider";
+import NPButton from "@/src/utils/NPButton";
 
 const Dilmension = () => {
   const {surface,circumference,length,width,setLength,setWidth,setSurface,setCircumference,setDataa,dataa} = useContext(DataContext)
@@ -228,13 +229,8 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
           +
         </button>
       </div>
-
-      <Link
-        href="/system"
-        className="btn normal-case w-96 animate-none no-animation my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
-      >
-        Next
-      </Link>
+<NPButton/>
+     
 
       <h1 className="text-3xl font-semibold">Do you have questions?</h1>
       <p className="my-3">We are happy to talk to you!</p>

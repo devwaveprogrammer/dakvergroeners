@@ -1,17 +1,19 @@
-"use client"
+import NPButton from '@/src/utils/NPButton';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { BsArrowLeft, BsArrowRight, BsTrash } from 'react-icons/bs';
 
 const Obstacles = () => {
   const [obstacles, setObstacles] = useState([
-    { name: 'Skylight', inputCount: 0 },
-    { name: 'Solar panel', inputCount: 0 },
-    { name: 'Flue', inputCount: 0 },
-    { name: 'Other obstacle', inputCount: 0 },
+    { name: 'Skylight', inputCount: 0, inputList: [] },
+    { name: 'Solar panel', inputCount: 0, inputList: [] },
+    { name: 'Flue', inputCount: 0, inputList: [] },
+    { name: 'Other obstacle', inputCount: 0, inputList: [] },
   ]);
-  
+
   const [checkedItems, setCheckedItems] = useState([]);
+  const [total1, setTotal1] = useState(0);
+  const [total2, setTotal2] = useState(0);
 
   const handleCheckboxChange = (item) => {
     if (checkedItems.includes(item)) {
@@ -20,21 +22,34 @@ const Obstacles = () => {
       setCheckedItems([...checkedItems, item]);
     }
   };
-  const [inputCount, setInputCount] = useState(0);
 
-  // Handle adding an input box
   const handleAddInput = (obstacle) => {
     const updatedObstacles = obstacles.map((ob) =>
-      ob.name === obstacle.name ? { ...ob, inputCount: ob.inputCount + 1 } : ob
+      ob.name === obstacle.name
+        ? { ...ob, inputCount: ob.inputCount + 1, inputList: [...ob.inputList, 
+          {name:obstacle.name+" "+ob.inputCount,
+          total: total1+total2,
+         
+          }] }
+        : ob
     );
     setObstacles(updatedObstacles);
   };
   
-
-  // Handle deleting an input box
-  const handleDeleteInput = () => {
-    if (inputCount > 0) {
-      setInputCount(inputCount - 1);
+  // Handle deleting an input box for a specific obstacle
+  const handleDeleteInput = (obstacle, index) => {
+    console.log("🚀 ~ file: Obstacles.jsx:41 ~ handleDeleteInput ~ index:", index);
+    if (obstacle.inputCount > 0) {
+      const updatedObstacles = obstacles.map((ob) =>
+        ob.name === obstacle.name
+          ? {
+              ...ob,
+            
+              inputList: ob.inputList.filter((_, i) => i !== index), // Use !== to filter out the specified index
+            }
+          : ob
+      );
+      setObstacles(updatedObstacles);
     }
   };
 
@@ -51,52 +66,51 @@ const Obstacles = () => {
           </div>
         </div>
         <ul className="mt-12 divide-y">
-        {obstacles.map((obstacle, idx) => (
-  <li key={idx} className="py-5">
-    <div className="flex gap-3 items-start justify-between">
-      <div>
-        <span className="block text-xl text-gray-700 font-semibold">{obstacle.name}</span>
-      </div>
-      <input
-        type="checkbox"
-        className="toggle"
-        checked={checkedItems.includes(obstacle.name)}
-        onChange={() => handleCheckboxChange(obstacle.name)}
-      />
-    </div>
-    <div>
-      {[...Array(obstacle.inputCount)].map((_, index) => (
-        <div key={index}>
-          <input type="text" placeholder="Type here" className="input input-bordered max-w-xs" />
-          <input type="text" placeholder="Type here" className="input input-bordered max-w-xs ml-2" />
-          <button className="ml-2" onClick={() => handleDeleteInput(obstacle)}> <BsTrash /></button>
-        </div>
-      ))}
-    </div>
-    {checkedItems.includes(obstacle.name) && (
-      <button onClick={() => handleAddInput(obstacle)} className="btn bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg">
-        +
-      </button>
-    )}
-  </li>
-))}
-
+          {obstacles.map((obstacle, idx) => (
+            <li key={idx} className="py-5">
+              <div className="flex gap-3 items-start justify-between">
+                <div>
+                  <span className="block text-xl text-gray-700 font-semibold">{obstacle.name}</span>
+                </div>
+                <input
+                  type="checkbox"
+                  className="toggle"
+                  checked={checkedItems.includes(obstacle.name)}
+                  onChange={() => handleCheckboxChange(obstacle.name)}
+                />
+              </div>
+              <div>
+                {checkedItems.includes(obstacle.name) && obstacle.inputList.map((item, index) => (
+                  <div key={index}>
+                    <input 
+                   
+                    onChange={(e) => setTotal1(e.target.value)}
+                    type="text" placeholder="Type here" className="input input-bordered max-w-xs" />
+                    <input
+                    
+                     onChange={(e) => setTotal2(e.target.value)}
+                    type="text" placeholder="Type here" className="input input-bordered max-w-xs ml-2" />
+                    <button className="ml-2" onClick={() => handleDeleteInput(obstacle, index)}>
+                      <BsTrash />
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {checkedItems.includes(obstacle.name) && (
+                <button
+                  onClick={() => {
+                    handleAddInput(obstacle);
+                  }}
+                  className="btn bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
+                >
+                  +
+                </button>
+              )}
+            </li>
+          ))}
         </ul>
-        <div className="ml-10">
-          <Link
-            href="/obstacles"
-            className="btn  no-animation normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
-            style={{ transition: 'background-color 0.3s, box-shadow 0.3s ' }}
-          >
-            <BsArrowLeft className="text-xl no-animation" /> Previous Step
-          </Link>
-          <Link
-            href="/waterdrainage"
-            className="btn normal-case w-48 animate-none my-5 bg-red-400 hover:bg-red-400 hover:shadow-lg text-white"
-          >
-            Next Step <BsArrowRight className="text-xl no-animation" />
-          </Link>
-        </div>
+
+        <NPButton />
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ export default function DataProvider({ children }) {
   const [gravelTitle, setGravelTitle] = useState(0);
   const [totalPrices, setTotalPrices] = useState(0);
   const [totalName, setTotalName] = useState([]);
+  const [pages, setPages]= useState(0)
 
   const info = {
     length,
@@ -40,7 +41,7 @@ export default function DataProvider({ children }) {
     gravelTitle,
     setGravelTitle,
     totalName,
-    setTotalName,
+    setTotalName,pages, setPages
   };
 
   return (

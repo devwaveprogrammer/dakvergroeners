@@ -9,7 +9,7 @@ import Aside from '../Components/Aside/Aside'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Create Next App',
+  title: 'De Dakvergroeners',
   description: 'Developed with MERN Stack',
 }
 

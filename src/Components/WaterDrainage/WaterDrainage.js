@@ -1,5 +1,6 @@
 "use client"
 import { DataContext } from "@/src/Context/DataProvider";
+import NPButton from "@/src/utils/NPButton";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
@@ -129,19 +130,7 @@ useEffect(()=>{
     
     </div>
     <div >
-   <Link
-          href="/waterdrainage"
-          className="btn  no-animation normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
-          style={{ transition: "background-color 0.3s, box-shadow 0.3s " }}
-        >
-          <BsArrowLeft className="text-xl no-animation" /> Previous Step
-        </Link>
-        <Link
-          href="/fertillizer"
-          className="btn normal-case w-48 animate-none my-5 bg-red-400 hover:bg-red-400 hover:shadow-lg text-white "
-        >
-          Next Step <BsArrowRight className="text-xl no-animation" />
-        </Link>
+<NPButton/>
    </div>
     </>
   );

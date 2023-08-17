@@ -1,6 +1,7 @@
 "use client";
 
 import { DataContext } from "@/src/Context/DataProvider";
+import NPButton from "@/src/utils/NPButton";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
@@ -104,7 +105,7 @@ const System = () => {
           </div>
         ))}
       </div>
-      <div>
+      {/* <div className="flex items-center">
         <Link
           href="/"
           className="btn no-animation normal-case w-48 mr-8 animate-none my-5 bg-gray-300 text-gray-700 hover:bg-red-400 hover:text-white hover:shadow-lg"
@@ -118,7 +119,8 @@ const System = () => {
         >
           Next Step <BsArrowRight className="text-xl no-animation" />
         </Link>
-      </div>
+      </div> */}
+      <NPButton/>
     </div>
   );
 };
