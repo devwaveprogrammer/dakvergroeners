@@ -103,9 +103,21 @@ const {setPages, pages} = useContext(DataContext)
   <ul className="">
     {
       FormTitles?.map(title => (
-        <li key={title.id} className={`pr-2 ${pages === parseInt(title.id) ? 'text-blue-600' : ''}`}>
-         <a onClick={() => setPages(parseInt(title.id))}>{title.name}</a>
-        </li>
+        
+        <li
+        key={title.id}
+        className={`pr-2 ${
+          pages === parseInt(title.id) ? 'text-black' : ''
+        } ${
+          pages >= parseInt(title.id) ? 'text-black' : 'text-gray-500 opacity-50'
+        }`}
+      >
+        <a
+          onClick={() => setPages(parseInt(title.id))}
+        >
+          {title.name}
+        </a>
+      </li>
       ))
     }
   </ul>

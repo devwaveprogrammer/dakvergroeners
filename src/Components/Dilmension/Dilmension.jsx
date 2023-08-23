@@ -152,6 +152,18 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
     // setDataa(data)
    
   };
+  const handleDeleteRoof = (index) => {
+    let data = JSON.parse(localStorage.getItem("roof-layouts"));
+    const newData = [...data];
+      if(index>0){
+
+        newData.splice(index, 1);
+      }
+    
+    localStorage.setItem("roof-layouts", JSON.stringify(newData));
+  };
+  
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -219,6 +231,10 @@ localStorage.setItem("roof-layouts", JSON.stringify(data));
           focus:btn-outline 
           ">
             Roof {index + 1}
+            {
+              index>0 &&
+            <button onClick={()=>handleDeleteRoof(index)}>X</button>
+            }
           </button>
         ))}
 
